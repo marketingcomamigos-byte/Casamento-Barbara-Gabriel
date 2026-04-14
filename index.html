@@ -265,12 +265,12 @@
 
     <!-- Duas opções: PIX e Cartão de Crédito -->
     <div class="opcoes-container">
-        <!-- Opção PIX - copia o número 44 99821-3672 -->
+        <!-- Opção PIX - copia o número 44 99888-1603 -->
         <div class="card-opcao" id="opcaoPix">
             <div class="info-opcao">
                 <h3>💚 PIX</h3>
                 <p>Pagamento instantâneo via chave PIX</p>
-                <p style="font-size:0.75rem; color:#aa7a56;">Clique para copiar o número: <strong>44 99821-3672</strong></p>
+                <p style="font-size:0.75rem; color:#aa7a56;">Clique para copiar o número: <strong>44 99888-1603</strong></p>
             </div>
             <button class="btn-acao" id="btnCopiarPix">
                 📋 Copiar número PIX
@@ -306,14 +306,14 @@
 <div id="toastCopiado" class="toast-mensagem">✅ Número PIX copiado!</div>
 
 <script>
-    // Número do PIX exatamente como solicitado: 44 99821-3672
+    // Número do PIX exatamente como solicitado: 44 99888-1603
     // Vamos armazenar no formato legível e também numérico para copiar sem espaços? O ideal é copiar o número para colar no app do banco.
-    // Muitos bancos aceitam com espaços, mas é mais seguro copiar apenas dígitos: 44998213672
-    const numeroPixFormatado = "44 99821-3672";
-    const numeroPixApenasDigitos = "44998213672";  // para copiar sem espaços (funciona em qualquer app)
+    // Muitos bancos aceitam com espaços, mas é mais seguro copiar apenas dígitos: 44998881603
+    const numeroPixFormatado = "44 99888-1603";
+    const numeroPixApenasDigitos = "44998881603";  // para copiar sem espaços (funciona em qualquer app)
     
     // Link do Mercado Pago (conforme informado)
-    const linkMercadoPago = "https://link.mercadopago.com.br/presentedecasamemto";
+    const linkMercadoPago = "https://link.mercadopago.com.br/barbaraegabriel";
     
     // Elementos
     const btnCopiar = document.getElementById('btnCopiarPix');
@@ -356,10 +356,10 @@
     btnCopiar.addEventListener('click', async (e) => {
         e.preventDefault();
         e.stopPropagation();
-        // Copia o número apenas com dígitos (44998213672) - garantia de funcionar em qualquer banco
+        // Copia o número apenas com dígitos (44998881603) - garantia de funcionar em qualquer banco
         const sucesso = await copiarParaClipboard(numeroPixApenasDigitos);
         if (sucesso) {
-            mostrarToast("✅ Chave PIX copiada! (44 99821-3672)");
+            mostrarToast("✅ Chave PIX copiada! (44 99888-1603)");
         } else {
             mostrarToast("❌ Não foi possível copiar. Selecione manualmente.");
         }
@@ -373,7 +373,7 @@
             if (e.target === btnCopiar || btnCopiar.contains(e.target)) return;
             const sucesso = await copiarParaClipboard(numeroPixApenasDigitos);
             if (sucesso) {
-                mostrarToast("✅ Chave PIX copiada! (44 99821-3672)");
+                mostrarToast("✅ Chave PIX copiada! (44 99888-1603)");
             } else {
                 mostrarToast("❌ Erro ao copiar.");
             }
