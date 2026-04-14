@@ -28,7 +28,7 @@
             border: 1px solid #ffe0c2;
         }
 
-        /* cabeçalho */
+        /* cabeçalho romântico */
         .header {
             text-align: center;
             margin-bottom: 1.5rem;
@@ -40,12 +40,13 @@
         }
 
         .header h1 {
-            font-size: 2rem;
+            font-size: 1.9rem;
             background: linear-gradient(135deg, #b45a2b, #dd8844);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .casal-nome {
@@ -68,193 +69,128 @@
             font-weight: 500;
         }
 
-        .bemvindo {
+        /* mensagem principal */
+        .mensagem-casal {
             background: #fef0e5;
-            border-radius: 1.2rem;
-            padding: 1rem;
-            margin: 1rem 0 1.5rem;
-            text-align: center;
+            border-radius: 1.5rem;
+            padding: 1.3rem;
+            margin: 1.2rem 0 1.5rem;
             font-size: 0.95rem;
-            color: #6b4226;
+            color: #4a2e1e;
+            line-height: 1.5;
             border-left: 5px solid #dd8844;
+            text-align: left;
         }
 
-        /* grade de valores */
-        .valores-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem;
-            margin: 1.5rem 0 1rem;
+        .mensagem-casal p {
+            margin-bottom: 0.8rem;
         }
 
-        .btn-valor {
-            background: #ffffff;
-            border: 2px solid #f3d5b5;
-            border-radius: 60px;
-            padding: 0.8rem 1rem;
-            min-width: 105px;
+        .mensagem-casal .frase-destaque {
+            font-style: italic;
+            color: #b45a2b;
+            font-weight: 500;
             text-align: center;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #9b5e2c;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-            background: #fffcf8;
+            margin: 0.8rem 0;
         }
 
-        .btn-valor:hover {
-            background: #ffe3cf;
-            border-color: #e2b48a;
-            transform: scale(1.02);
-        }
-
-        /* campo OUTRO VALOR */
-        .outro-valor-area {
-            background: #fff7f0;
-            border-radius: 2rem;
-            padding: 1rem;
-            margin: 1rem 0;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            border: 1px dashed #e2bc93;
-        }
-
-        .outro-valor-area label {
-            font-weight: 600;
+        .assinatura {
+            margin-top: 1rem;
+            text-align: right;
+            font-weight: 500;
             color: #b45a2b;
         }
 
-        .outro-valor-area input {
-            padding: 0.7rem 1rem;
-            border-radius: 60px;
-            border: 1px solid #e2cbb0;
-            font-size: 1rem;
-            width: 150px;
-            text-align: center;
-            outline: none;
+        /* opções de presente */
+        .opcoes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 2rem 0 1.5rem;
         }
 
-        .outro-valor-area input:focus {
-            border-color: #dd8844;
+        .card-opcao {
+            background: #ffffff;
+            border: 2px solid #f3d5b5;
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
 
-        .btn-outro {
+        .card-opcao:hover {
+            background: #fffaf5;
+            border-color: #e2b48a;
+            transform: scale(1.01);
+            box-shadow: 0 8px 20px rgba(160, 90, 40, 0.1);
+        }
+
+        .info-opcao {
+            flex: 1;
+        }
+
+        .info-opcao h3 {
+            font-size: 1.4rem;
+            color: #b45a2b;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-opcao p {
+            color: #8a6244;
+            font-size: 0.85rem;
+        }
+
+        .btn-acao {
             background: #dd8844;
             color: white;
             border: none;
             border-radius: 60px;
-            padding: 0.7rem 1.2rem;
+            padding: 0.7rem 1.5rem;
             font-weight: bold;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
         }
 
-        .btn-outro:hover {
+        .btn-acao:hover {
             background: #c5702e;
+            transform: scale(0.98);
         }
 
-        /* modal de escolha: PIX ou parcelado */
-        .modal-pagamento {
+        /* feedback de copiado */
+        .toast-mensagem {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(50, 30, 20, 0.75);
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c6e2c;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 500;
             z-index: 1000;
-            visibility: hidden;
             opacity: 0;
-            transition: all 0.2s ease;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        .modal-pagamento.active {
-            visibility: visible;
+        .toast-mensagem.show {
             opacity: 1;
-        }
-
-        .modal-card {
-            background: #fffef7;
-            border-radius: 2rem;
-            max-width: 450px;
-            width: 90%;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3);
-            border: 1px solid #fadabc;
-        }
-
-        .modal-card h3 {
-            font-size: 1.7rem;
-            color: #b45f2b;
-            margin-bottom: 0.5rem;
-        }
-
-        .valor-exibido-modal {
-            background: #faeedf;
-            display: inline-block;
-            padding: 0.3rem 1.2rem;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.6rem;
-            margin: 0.8rem 0;
-            color: #9b4e1a;
-        }
-
-        .opcoes-botoes {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .btn-pix-modal {
-            background: #1c9c4c;
-            color: white;
-            border: none;
-            padding: 0.9rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 60px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-parcelado-modal {
-            background: #e0a878;
-            color: white;
-            border: none;
-            padding: 0.9rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 60px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-fechar-modal {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            cursor: pointer;
-            color: #b48a64;
         }
 
         .info-whats {
@@ -289,10 +225,16 @@
             .container {
                 padding: 1.2rem;
             }
-            .btn-valor {
-                min-width: 85px;
-                font-size: 1rem;
-                padding: 0.6rem 0.8rem;
+            .card-opcao {
+                flex-direction: column;
+                text-align: center;
+            }
+            .btn-acao {
+                width: 100%;
+                justify-content: center;
+            }
+            .info-opcao h3 {
+                justify-content: center;
             }
         }
     </style>
@@ -303,269 +245,169 @@
         <div class="flores">💍🌸💐</div>
         <h1>Presentes de Casamento</h1>
         <div class="casal-nome">✨ Bárbara & Gabriel ✨</div>
-        <div class="data-info">📅 09 de Maio de 2026</div>
+        <div class="data-info">📅 09 de maio de 2026</div>
     </div>
 
-    <div class="bemvindo">
-        💖 Que alegria ter você conosco neste dia tão especial!<br>
-        Se quiser nos presentear com um mimo em dinheiro, escolha um dos valores abaixo ou digite um valor personalizado.<br>
-        Depois você escolhe como deseja pagar: <strong>PIX à vista</strong> ou <strong>parcelado</strong> e enviará uma mensagem diretamente para os noivos. 🥂
+    <!-- Texto principal revisado conforme solicitado -->
+    <div class="mensagem-casal">
+        <p><strong>✨ "E assim celebramos o amor" ✨</strong></p>
+        <p>Com muita alegria, vamos oficializar nossa união e celebrar esse momento tão especial ao lado das pessoas que amamos.</p>
+        <p>Sua presença já é o nosso maior presente! Mas, para quem desejar nos presentear, preparamos algumas opções em forma de contribuição, que nos ajudarão a realizar novos sonhos, viver novas experiências e continuar construindo nossa história juntos.</p>
+        <p>Cada gesto de carinho será recebido com muita gratidão e ficará guardado com amor em nossa memória e em nossa nova fase como casal.</p>
+        <div class="frase-destaque">💬 Como funciona?</div>
+        <p>Escolha uma das opções abaixo<br>
+        → Pagamento por Pix<br>
+        → Link para pagamento com cartão de crédito</p>
+        <p>Simples, rápido, seguro e feito com muito carinho! 💌</p>
+        <p>Desde já, agradecemos por todo carinho, apoio e por fazer parte de um dos momentos mais importantes de nossas vidas. Estamos ansiosos para celebrar esse dia especial com você! ✨</p>
+        <div class="assinatura">Com amor,<br>Bárbara & Gabriel 💍</div>
     </div>
 
-    <!-- Grade de valores fixos (50,100,200,400,800,1600,3200,5000) -->
-    <div class="valores-grid" id="valoresGrid"></div>
+    <!-- Duas opções: PIX e Cartão de Crédito -->
+    <div class="opcoes-container">
+        <!-- Opção PIX - copia o número 44 99821-3672 -->
+        <div class="card-opcao" id="opcaoPix">
+            <div class="info-opcao">
+                <h3>💚 PIX</h3>
+                <p>Pagamento instantâneo via chave PIX</p>
+                <p style="font-size:0.75rem; color:#aa7a56;">Clique para copiar o número: <strong>44 99821-3672</strong></p>
+            </div>
+            <button class="btn-acao" id="btnCopiarPix">
+                📋 Copiar número PIX
+            </button>
+        </div>
 
-    <!-- Área para Outro Valor (personalizado) -->
-    <div class="outro-valor-area">
-        <label>✨ Outro valor:</label>
-        <input type="number" id="outroValorInput" placeholder="Ex: 250" min="10" step="10" value="">
-        <button class="btn-outro" id="btnOutroValor">Presentear com este valor</button>
+        <!-- Opção Cartão de Crédito - abre link do Mercado Pago -->
+        <div class="card-opcao" id="opcaoCartao">
+            <div class="info-opcao">
+                <h3>💳 Cartão de Crédito</h3>
+                <p>Pagamento parcelado com segurança</p>
+                <p style="font-size:0.75rem; color:#aa7a56;">Redireciona para o link de pagamento</p>
+            </div>
+            <button class="btn-acao" id="btnAbrirCartao">
+                🔗 Acessar link
+            </button>
+        </div>
     </div>
 
     <div class="info-whats">
-        💡 Após escolher o valor, você selecionará <strong>PIX</strong> ou <strong>Parcelado</strong>.<br>
-        Em seguida, uma mensagem personalizada será enviada ao WhatsApp do casal com o valor e a forma de pagamento escolhida.
+        💖 <strong>Segurança e transparência</strong><br>
+        O PIX é copiado diretamente para sua área de transferência. O pagamento com cartão é redirecionado para o ambiente seguro do Mercado Pago.
     </div>
     <div class="footer">
-        🙏 Bárbara & Gabriel agradecem seu carinho e generosidade! 🙏
+        🙏 Agradecemos imensamente por cada gesto de carinho e por celebrar conosco! 🙏
     </div>
     <div class="selo">
         🎁 #CasamentoBarbaraEGabriel 09/05/2026
     </div>
 </div>
 
-<!-- Modal para escolher PIX ou Parcelado -->
-<div id="modalPagamento" class="modal-pagamento">
-    <div class="modal-card">
-        <button class="btn-fechar-modal" id="fecharModalBtn">&times;</button>
-        <h3>💎 Forma de pagamento</h3>
-        <p>Você está presenteando com</p>
-        <div class="valor-exibido-modal" id="modalValorMostrar">R$ 0,00</div>
-        <div class="opcoes-botoes">
-            <button id="btnPixOpcao" class="btn-pix-modal">
-                💚 PAGAR COM PIX (à vista)
-            </button>
-            <button id="btnParceladoOpcao" class="btn-parcelado-modal">
-                💳 PAGAR PARCELADO (cartão)
-            </button>
-        </div>
-        <p style="font-size: 0.75rem; color: #b48a64; margin-top: 1rem;">
-            ⚡ Ao clicar, você será direcionado ao WhatsApp do casal com uma mensagem pronta.<br>
-            Eles retornarão com a chave PIX ou link de parcelamento.
-        </p>
-    </div>
-</div>
+<!-- Toast de feedback ao copiar -->
+<div id="toastCopiado" class="toast-mensagem">✅ Número PIX copiado!</div>
 
 <script>
-    // ---------- CONFIGURAÇÕES ----------
-    // Valores fixos atualizados conforme solicitado: 50,100,200,400,800,1600,3200,5000
-    const valoresFixos = [50, 100, 200, 400, 800, 1600, 3200, 5000];
+    // Número do PIX exatamente como solicitado: 44 99821-3672
+    // Vamos armazenar no formato legível e também numérico para copiar sem espaços? O ideal é copiar o número para colar no app do banco.
+    // Muitos bancos aceitam com espaços, mas é mais seguro copiar apenas dígitos: 44998213672
+    const numeroPixFormatado = "44 99821-3672";
+    const numeroPixApenasDigitos = "44998213672";  // para copiar sem espaços (funciona em qualquer app)
     
-    // Número do WhatsApp (44 99888-1603) formato internacional
-    const whatsappNumero = "5544998881603";
+    // Link do Mercado Pago (conforme informado)
+    const linkMercadoPago = "https://link.mercadopago.com.br/presentedecasamemto";
     
-    // Data do casamento (exibida)
-    // Nomes do casal
-    const nomeNoiva = "Bárbara";
-    const nomeNoivo = "Gabriel";
+    // Elementos
+    const btnCopiar = document.getElementById('btnCopiarPix');
+    const btnCartao = document.getElementById('btnAbrirCartao');
+    const toast = document.getElementById('toastCopiado');
     
-    // Variável para armazenar o valor selecionado temporariamente (antes do modal)
-    let valorSelecionadoTemp = null;
-    
-    // Função formatar moeda
-    function formatarValor(valor) {
-        return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    // Função para mostrar feedback visual
+    function mostrarToast(mensagem) {
+        toast.textContent = mensagem || "✅ Número PIX copiado!";
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2500);
     }
     
-    // Função para gerar a mensagem final conforme a forma de pagamento
-    // A mensagem deve conter: nome do casal, valor em negrito, se é PIX ou parcelado, e pedir chave/link
-    function gerarMensagemFinal(valor, tipoPagamento) {
-        const valorFormatado = formatarValor(valor);
-        // tipoPagamento: "PIX" ou "Parcelado"
-        let textoForma = "";
-        let solicitacao = "";
-        
-        if (tipoPagamento === "PIX") {
-            textoForma = "💚 *PIX (à vista)*";
-            solicitacao = "Poderia, por favor, me passar a chave PIX para que eu possa fazer o envio imediato?";
+    // Função para copiar texto para área de transferência (cross-browser)
+    async function copiarParaClipboard(texto) {
+        try {
+            // Método moderno com Clipboard API
+            await navigator.clipboard.writeText(texto);
+            return true;
+        } catch (err) {
+            // Fallback para navegadores antigos
+            try {
+                const textarea = document.createElement('textarea');
+                textarea.value = texto;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                return true;
+            } catch (e) {
+                console.error('Erro ao copiar: ', e);
+                return false;
+            }
+        }
+    }
+    
+    // Evento para copiar número do PIX (vamos copiar a versão com dígitos apenas, mais compatível com apps de banco)
+    btnCopiar.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // Copia o número apenas com dígitos (44998213672) - garantia de funcionar em qualquer banco
+        const sucesso = await copiarParaClipboard(numeroPixApenasDigitos);
+        if (sucesso) {
+            mostrarToast("✅ Chave PIX copiada! (44 99821-3672)");
         } else {
-            textoForma = "💳 *Parcelado (cartão de crédito)*";
-            solicitacao = "Poderia, por favor, me passar o link para pagamento parcelado ou as instruções para que eu possa realizar o presente parcelado?";
+            mostrarToast("❌ Não foi possível copiar. Selecione manualmente.");
         }
-        
-        // Montagem da mensagem conforme solicitado (com negrito no valor e informações claras)
-        const mensagem = `Olá, ${nomeNoiva} e ${nomeNoivo}! 💖
-
-Gostaria de presentear o casal com o valor de *${valorFormatado}* para o presente de casamento.
-
-Forma de pagamento escolhida: ${textoForma}
-
-${solicitacao}
-
-Desde já agradeço e felicidades ao casal! 🎉🥂
-
-Data do casamento: 09/05/2026 ✨`;
-        
-        return encodeURIComponent(mensagem);
-    }
+    });
     
-    // Função que abre o WhatsApp com base no valor e tipo de pagamento
-    function enviarWhatsAppComValorETipo(valor, tipoPagamento) {
-        if (!valor || valor <= 0) {
-            alert("Valor inválido. Por favor, selecione um valor válido.");
-            return false;
-        }
-        const mensagemCodificada = gerarMensagemFinal(valor, tipoPagamento);
-        const urlWhats = `https://wa.me/${whatsappNumero}?text=${mensagemCodificada}`;
-        window.open(urlWhats, '_blank');
-        return true;
-    }
-    
-    // Mostrar o modal de escolha (PIX ou parcelado) para o valor escolhido
-    function mostrarModalEscolhaPagamento(valor) {
-        if (!valor || valor <= 0) {
-            alert("Por favor, escolha um valor válido (mínimo R$ 10,00).");
-            return;
-        }
-        // Armazena o valor atual
-        valorSelecionadoTemp = valor;
-        // Atualiza o texto do modal
-        const modalValorSpan = document.getElementById('modalValorMostrar');
-        if (modalValorSpan) modalValorSpan.innerText = formatarValor(valor);
-        // Exibe modal
-        const modal = document.getElementById('modalPagamento');
-        if (modal) modal.classList.add('active');
-    }
-    
-    // Fechar modal
-    function fecharModal() {
-        const modal = document.getElementById('modalPagamento');
-        if (modal) modal.classList.remove('active');
-        valorSelecionadoTemp = null;
-    }
-    
-    // Handler para quando clicar no PIX dentro do modal
-    function handlePixClick() {
-        if (valorSelecionadoTemp !== null && valorSelecionadoTemp > 0) {
-            enviarWhatsAppComValorETipo(valorSelecionadoTemp, "PIX");
-            fecharModal();
-        } else {
-            alert("Valor não identificado. Selecione novamente o presente.");
-            fecharModal();
-        }
-    }
-    
-    // Handler para quando clicar em PARCELADO
-    function handleParceladoClick() {
-        if (valorSelecionadoTemp !== null && valorSelecionadoTemp > 0) {
-            enviarWhatsAppComValorETipo(valorSelecionadoTemp, "Parcelado");
-            fecharModal();
-        } else {
-            alert("Valor não identificado. Selecione novamente o presente.");
-            fecharModal();
-        }
-    }
-    
-    // Criar botões para valores fixos
-    function criarBotoesValoresFixos() {
-        const grid = document.getElementById('valoresGrid');
-        if (!grid) return;
-        grid.innerHTML = '';
-        
-        valoresFixos.forEach(valor => {
-            const botao = document.createElement('button');
-            botao.className = 'btn-valor';
-            botao.textContent = formatarValor(valor);
-            botao.addEventListener('click', () => {
-                // Ao clicar no valor fixo, mostra modal de escolha PIX/Parcelado
-                mostrarModalEscolhaPagamento(valor);
-            });
-            grid.appendChild(botao);
-        });
-    }
-    
-    // Validar e obter valor do campo "Outro valor"
-    function obterOutroValor() {
-        const inputEl = document.getElementById('outroValorInput');
-        let rawValue = inputEl.value.trim();
-        if (rawValue === "") return null;
-        // converte para número
-        let numero = parseFloat(rawValue.replace(',', '.'));
-        if (isNaN(numero)) return null;
-        // arredondar para centavos? Mas valores geralmente inteiros
-        numero = Math.floor(numero);
-        if (numero < 10) {
-            alert("O valor mínimo para presente é R$ 10,00.");
-            return null;
-        }
-        // limite opcional: max 50000
-        if (numero > 50000) {
-            alert("Valor muito alto. Por favor, insira um valor até R$ 50.000");
-            return null;
-        }
-        return numero;
-    }
-    
-    // Evento do botão "Outro valor"
-    function configurarOutroValor() {
-        const btnOutro = document.getElementById('btnOutroValor');
-        if (!btnOutro) return;
-        btnOutro.addEventListener('click', () => {
-            const valor = obterOutroValor();
-            if (valor && valor > 0) {
-                mostrarModalEscolhaPagamento(valor);
-                // opcional: limpar campo após escolha? mantém para nova escolha
-                // document.getElementById('outroValorInput').value = '';
+    // Também permite clicar em qualquer lugar do card PIX para copiar (melhor UX)
+    const cardPix = document.getElementById('opcaoPix');
+    if (cardPix) {
+        cardPix.addEventListener('click', async (e) => {
+            // Evita que o clique no botão dispare duas vezes
+            if (e.target === btnCopiar || btnCopiar.contains(e.target)) return;
+            const sucesso = await copiarParaClipboard(numeroPixApenasDigitos);
+            if (sucesso) {
+                mostrarToast("✅ Chave PIX copiada! (44 99821-3672)");
+            } else {
+                mostrarToast("❌ Erro ao copiar.");
             }
         });
     }
     
-    // Permitir que ao pressionar Enter no campo "outro valor" também dispare
-    function configurarEnterOutroValor() {
-        const inputOutro = document.getElementById('outroValorInput');
-        if (inputOutro) {
-            inputOutro.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    const valor = obterOutroValor();
-                    if (valor && valor > 0) {
-                        mostrarModalEscolhaPagamento(valor);
-                    }
-                }
-            });
-        }
-    }
-    
-    // Inicialização e eventos do modal
-    function initModal() {
-        const modal = document.getElementById('modalPagamento');
-        const fecharBtn = document.getElementById('fecharModalBtn');
-        const pixBtn = document.getElementById('btnPixOpcao');
-        const parceladoBtn = document.getElementById('btnParceladoOpcao');
-        
-        if (fecharBtn) fecharBtn.addEventListener('click', fecharModal);
-        if (pixBtn) pixBtn.addEventListener('click', handlePixClick);
-        if (parceladoBtn) parceladoBtn.addEventListener('click', handleParceladoClick);
-        
-        // Fechar ao clicar no overlay
-        if (modal) {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) fecharModal();
-            });
-        }
-    }
-    
-    // Rodapé extra com informações dinâmicas (data e nomes já estão)
-    document.addEventListener('DOMContentLoaded', () => {
-        criarBotoesValoresFixos();
-        configurarOutroValor();
-        configurarEnterOutroValor();
-        initModal();
-        
-        // Pequeno ajuste: se por acaso o modal estiver aberto e usuário clicar em um novo valor, o modal deve atualizar o valor
-        // A função mostrarModalEscolhaPagamento já atualiza o valor e reexibe o modal.
-        // Também garantir que o modal ao abrir já mostra o valor correto.
+    // Evento para abrir link do cartão de crédito (Mercado Pago)
+    btnCartao.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        // Abre o link em nova aba
+        window.open(linkMercadoPago, '_blank', 'noopener,noreferrer');
     });
+    
+    // Também permite clicar no card inteiro do cartão para abrir o link
+    const cardCartao = document.getElementById('opcaoCartao');
+    if (cardCartao) {
+        cardCartao.addEventListener('click', (e) => {
+            if (e.target === btnCartao || btnCartao.contains(e.target)) return;
+            window.open(linkMercadoPago, '_blank', 'noopener,noreferrer');
+        });
+    }
+    
+    // Adicionar um pequeno detalhe: tooltip nativo para o número PIX (apenas visual)
+    const infoPix = document.querySelector('#opcaoPix .info-opcao p:last-child');
+    if (infoPix) {
+        infoPix.style.cursor = 'pointer';
+        infoPix.title = 'Clique para copiar o número';
+        infoPix.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            const sucesso = await copiarParaClipboard(numeroPixApenasDigitos);
+            if (sucesso) mostrarToast("✅ Chave PIX copiada!");
+        });
+    }
 </script>
 </body>
 </html>
